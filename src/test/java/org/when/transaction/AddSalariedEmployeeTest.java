@@ -2,20 +2,24 @@ package org.when.transaction;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.when.DataBase;
+import org.when.PayrollDatabase;
 import org.when.employee.*;
+import org.when.employee.PaymentClassification;
+import org.when.employee.classification.SalariedClassification;
+import org.when.employee.method.HoldMethod;
+import org.when.employee.schedule.MonthlySchedule;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 public class AddSalariedEmployeeTest {
 
-    private DataBase dataBase;
+    private PayrollDatabase dataBase;
     private AddSalariedEmployee addSalariedEmployee;
 
     @Before
     public void setUp() throws Exception {
-        dataBase = new DataBase();
+        dataBase = PayrollDatabase.getInstance();
     }
 
     @Test
