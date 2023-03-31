@@ -1,7 +1,7 @@
 package org.when.employee;
 
 public class Employee {
-    private int employeeId;
+    private Integer employeeId;
     private String name;
     private String address;
 
@@ -9,17 +9,17 @@ public class Employee {
     private PaymentSchedule schedule;
     private PaymentMethod method;
 
-    public Employee(int employeeId, String name, String address) {
+    public Employee(Integer employeeId, String name, String address) {
         this.employeeId = employeeId;
         this.name = name;
         this.address = address;
     }
 
-    public int getEmployeeId() {
+    public Integer getEmployeeId() {
         return employeeId;
     }
 
-    public void setEmployeeId(int employeeId) {
+    public void setEmployeeId(Integer employeeId) {
         this.employeeId = employeeId;
     }
 

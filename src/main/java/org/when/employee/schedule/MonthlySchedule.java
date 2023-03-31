@@ -1,4 +1,6 @@
-package org.when.employee;
+package org.when.employee.schedule;
+
+import org.when.employee.PaymentSchedule;
 
 import java.time.LocalDate;
 
