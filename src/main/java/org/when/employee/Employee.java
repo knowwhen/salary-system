@@ -1,5 +1,8 @@
 package org.when.employee;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Employee {
     private Integer employeeId;
     private String name;
@@ -8,6 +11,7 @@ public class Employee {
     private PaymentClassification classification;
     private PaymentSchedule schedule;
     private PaymentMethod method;
+    private List<Affiliation> affiliations = new ArrayList<>();
 
     public Employee(Integer employeeId, String name, String address) {
         this.employeeId = employeeId;
@@ -61,5 +65,15 @@ public class Employee {
 
     public void setMethod(PaymentMethod method) {
         this.method = method;
+    }
+
+    public void addAffiliation(Affiliation affiliation) {
+        affiliations.add(affiliation);
+    }
+
+    public Affiliation getAffiliation() {
+        return affiliations.stream()
+                .findAny()
+                .orElse(null);
     }
 }

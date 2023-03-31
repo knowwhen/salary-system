@@ -19,9 +19,14 @@ public class PayrollDatabase {
     }
 
     private final Map<Integer, Employee> employees = new HashMap<>();
+    private final Map<Integer, Employee> unionMembers = new HashMap<>();
 
     public Employee findEmployee(int employeeId) {
         return employees.get(employeeId);
+    }
+
+    public Employee findEmployeeByMemberId(int memberId) {
+        return unionMembers.get(memberId);
     }
 
     public void addEmployee(Integer employeeId, Employee employee) {
@@ -30,5 +35,9 @@ public class PayrollDatabase {
 
     public void deleteEmployee(Integer employeeId) {
         employees.remove(employeeId);
+    }
+
+    public void addUnionMember(int memberId, Employee employee) {
+        unionMembers.put(memberId, employee);
     }
 }
