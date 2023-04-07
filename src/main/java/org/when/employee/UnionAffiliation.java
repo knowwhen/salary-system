@@ -31,4 +31,10 @@ public class UnionAffiliation implements Affiliation {
         // todo:
         System.out.println("add service charge:" + date + "/" + serviceCharge);
     }
+
+    @Override
+    public Double getDues() {
+        // todo:
+        return serviceCharge;
+    }
 }

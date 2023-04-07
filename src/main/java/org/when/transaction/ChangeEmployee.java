@@ -1,34 +1,26 @@
 package org.when.transaction;
 
-import org.when.PayrollDatabase;
 import org.when.employee.Employee;
 
 import java.util.Optional;
 import java.util.function.BiConsumer;
 
-public class ChangeEmployee implements Transaction {
-    private final PayrollDatabase database;
-    private final Integer employeeId;
+public class ChangeEmployee extends AbstractChange {
 
     public ChangeEmployee(Integer employeeId) {
-        this.database = PayrollDatabase.getInstance();
-        this.employeeId = employeeId;
+        super(employeeId);
     }
 
     @Override
-    public void execute() {
-
+    public void change(Employee employee) {
+        // todo: maybe this is unnecessary
+        System.out.println("change method:" + employee.getEmployeeId());
     }
 
     public <V> void doChange(BiConsumer<Employee, V> acceptor, V value) {
-        Optional<Employee> optional = findEmployee();
-        Employee employee = optional.orElseThrow(() -> new RuntimeException("Unknown employee with id: " + employeeId));
+        Optional<Employee> optional = getEmployee();
+        Employee employee = optional.orElseThrow(() -> new RuntimeException("Unknown employee with id: " + getEmployeeId()));
         acceptor.accept(employee, value);
-    }
-
-    protected Optional<Employee> findEmployee() {
-        Employee employee = database.findEmployee(employeeId);
-        return Optional.ofNullable(employee);
     }
 
 }

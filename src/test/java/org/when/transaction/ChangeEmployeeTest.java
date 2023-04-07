@@ -5,7 +5,7 @@ import org.junit.Test;
 import org.when.PayrollDatabase;
 import org.when.employee.Employee;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class ChangeEmployeeTest {
 
@@ -27,5 +27,11 @@ public class ChangeEmployeeTest {
 
         Employee employee = database.findEmployee(employeeId);
         assertEquals(newName, employee.getName());
+    }
+
+    @Test(expected = RuntimeException.class)
+    public void test_change_unknown_employee() {
+        ChangeEmployee changeEmployee = new ChangeEmployee(123);
+        changeEmployee.execute();
     }
 }

@@ -40,4 +40,8 @@ public class PayrollDatabase {
     public void addUnionMember(int memberId, Employee employee) {
         unionMembers.put(memberId, employee);
     }
+
+    public void removeUnionMember(Integer memberId) {
+        unionMembers.remove(memberId);
+    }
 }
