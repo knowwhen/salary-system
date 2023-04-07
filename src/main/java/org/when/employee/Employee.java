@@ -11,7 +11,7 @@ public class Employee {
     private PaymentClassification classification;
     private PaymentSchedule schedule;
     private PaymentMethod method;
-    private List<Affiliation> affiliations = new ArrayList<>();
+    private final List<Affiliation> affiliations = new ArrayList<>();
 
     public Employee(Integer employeeId, String name, String address) {
         this.employeeId = employeeId;
