@@ -4,9 +4,9 @@ import org.junit.Before;
 import org.junit.Test;
 import org.when.PayrollDatabase;
 import org.when.employee.Employee;
-import org.when.employee.classification.HourlyClassification;
 import org.when.employee.PaymentClassification;
 import org.when.employee.TimeCard;
+import org.when.employee.classification.HourlyClassification;
 
 import java.time.LocalDate;
 import java.util.Optional;
@@ -26,7 +26,7 @@ public class AddTimeCardTest {
         int employeeId = 1;
         LocalDate today = LocalDate.now();
         long hours = 8;
-        AddHourlyEmployee addHourlyEmployee = new AddHourlyEmployee(employeeId, "Hourly Employee", "Home today and gone tomorrow");
+        AddHourlyEmployee addHourlyEmployee = new AddHourlyEmployee(employeeId, "Hourly Employee", "Home today and gone tomorrow", 1.0);
         addHourlyEmployee.execute();
 
         AddTimeCard addTimeCard = new AddTimeCard(employeeId, today, hours);

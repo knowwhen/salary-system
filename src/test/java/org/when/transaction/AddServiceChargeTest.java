@@ -25,7 +25,7 @@ public class AddServiceChargeTest {
         int memberId = 11;
         LocalDate today = LocalDate.now();
         double serviceCharge = 12.5;
-        AddHourlyEmployee addEmployee = new AddHourlyEmployee(employeeId, "Hourly Employee", "Somewhere");
+        AddHourlyEmployee addEmployee = new AddHourlyEmployee(employeeId, "Hourly Employee", "Somewhere", 1.0);
         addEmployee.execute();
 
         Employee employee = database.findEmployee(employeeId);

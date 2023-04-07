@@ -9,8 +9,17 @@ import java.util.List;
 import java.util.Optional;
 
 public class HourlyClassification implements PaymentClassification {
+    private final double rate;
+    private final List<TimeCard> timeCards;
 
-    private final List<TimeCard> timeCards = new ArrayList<>();
+    public HourlyClassification(double rate) {
+        this.rate = rate;
+        this.timeCards = new ArrayList<>();
+    }
+
+    public double getRate() {
+        return rate;
+    }
 
     public void addTimeCard(TimeCard timeCard) {
         timeCards.add(timeCard);

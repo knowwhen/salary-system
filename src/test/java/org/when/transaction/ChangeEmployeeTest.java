@@ -20,7 +20,7 @@ public class ChangeEmployeeTest {
     public void test_change_employee_name() {
         int employeeId = 2;
         String newName = "New Name";
-        AddHourlyEmployee hourlyEmployee = new AddHourlyEmployee(2, "Hourly Employee", "Anywhere");
+        AddHourlyEmployee hourlyEmployee = new AddHourlyEmployee(employeeId, "Hourly Employee", "Anywhere", 1.0);
         hourlyEmployee.execute();
         ChangeEmployee changeName = new ChangeEmployee(employeeId);
         changeName.doChange(Employee::setName, newName);
